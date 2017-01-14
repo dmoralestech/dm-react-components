@@ -2,6 +2,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+var Time = React.createClass({
+    render: function() {
+        return (
+            <span className="time">3h ago</span>
+        );
+    }
+});
+var ReplyButton = React.createClass({
+    render: function() {
+        return (
+            <i className="fa fa-reply reply-button"/>
+        );
+    }
+});
+var RetweetButton = React.createClass({
+    render: function() {
+        return (
+            <i className="fa fa-retweet retweet-button"/>
+        );
+    }
+});
+var LikeButton = React.createClass({
+    render: function() {
+        return (
+            <i className="fa fa-heart like-button"/>
+        );
+    }
+});
+
+var MoreOptionsButton = React.createClass({
+    render: function() {
+        return (
+            <i className="fa fa-ellipsis-h more-options-button"/>
+        );
+    }
+});
+
+
 var Message = React.createClass({
     render: function() {
         return (
@@ -38,8 +76,14 @@ var Tweet = React.createClass({
             <div className="tweet">
                 <Avatar/>
                 <div className="content">
-                    <NameWithHandle/>
+                    <NameWithHandle/><Time/>
                     <Message/>
+                    <div className="buttons">
+                        <ReplyButton/>
+                        <RetweetButton/>
+                        <LikeButton/>
+                        <MoreOptionsButton/>
+                    </div>
                 </div>
             </div>
         );
