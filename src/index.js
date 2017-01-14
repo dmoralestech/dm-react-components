@@ -3,28 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 var Time = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <span className="time">3h ago</span>
         );
     }
 });
 var ReplyButton = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <i className="fa fa-reply reply-button"/>
         );
     }
 });
 var RetweetButton = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <i className="fa fa-retweet retweet-button"/>
         );
     }
 });
 var LikeButton = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <i className="fa fa-heart like-button"/>
         );
@@ -32,7 +32,7 @@ var LikeButton = React.createClass({
 });
 
 var MoreOptionsButton = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <i className="fa fa-ellipsis-h more-options-button"/>
         );
@@ -41,7 +41,7 @@ var MoreOptionsButton = React.createClass({
 
 
 var Message = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="message">
                 This is less than 140 characters.
@@ -50,7 +50,7 @@ var Message = React.createClass({
     }
 });
 var NameWithHandle = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <span className="name-with-handle">
 <span className="name">Your Name</span>
@@ -61,17 +61,17 @@ var NameWithHandle = React.createClass({
 });
 
 var Avatar = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <img src="https://www.gravatar.com/avatar/nothing"
                  className="avatar"
-                 alt="avatar" />
+                 alt="avatar"/>
         );
     }
 });
 
 var Tweet = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="tweet">
                 <Avatar/>
