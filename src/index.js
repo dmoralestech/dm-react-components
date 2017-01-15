@@ -2,39 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-var Time = () => {
+const Time = () => {
     return (
         <span className="time">3h ago</span>
     );
 }
 
-var ReplyButton = () => {
+const ReplyButton = () => {
     return (
         <i className="fa fa-reply reply-button"/>
     );
 }
 
-var RetweetButton = () => {
+const RetweetButton = () => {
     return (
         <i className="fa fa-retweet retweet-button"/>
     );
 }
 
-var LikeButton = () => {
+const LikeButton = () => {
     return (
         <i className="fa fa-heart like-button"/>
     );
 }
 
 
-var MoreOptionsButton = () => {
+const MoreOptionsButton = () => {
     return (
         <i className="fa fa-ellipsis-h more-options-button"/>
     );
 }
 
 
-var Message = () => {
+const Message = () => {
     return (
         <div className="message">
             This is less than 140 characters.
@@ -42,7 +42,7 @@ var Message = () => {
     );
 }
 
-var NameWithHandle = () => {
+const NameWithHandle = () => {
     return (
         <span className="name-with-handle">
             <span className="name">Your Name</span>
@@ -51,7 +51,7 @@ var NameWithHandle = () => {
     );
 }
 
-var Avatar = () => {
+const Avatar = () => {
     return (
         <img src="https://www.gravatar.com/avatar/nothing"
              className="avatar"
@@ -59,7 +59,7 @@ var Avatar = () => {
     );
 }
 
-var Tweet = () => {
+const Tweet = () => {
     return (
         <div className="tweet">
             <Avatar/>
