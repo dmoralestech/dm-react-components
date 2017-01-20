@@ -42,6 +42,14 @@ const Message = () => {
     );
 }
 
+const newMessage = () => {
+    return (
+        <div className="message">
+        This is less than 140 characters.
+    </div>
+);
+}
+
 const NameWithHandle = () => {
     return (
         <span className="name-with-handle">
