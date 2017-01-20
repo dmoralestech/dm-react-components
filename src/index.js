@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import ProductList from  './ProductList';
 
 const Time = () => {
     return (
@@ -85,4 +86,4 @@ const Tweet = () => {
     );
 }
 
-ReactDOM.render(<Tweet/>, document.querySelector('#root'));
+ReactDOM.render(<ProductList/>, document.querySelector('#root'));
