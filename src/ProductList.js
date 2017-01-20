@@ -17,7 +17,7 @@ window.Data = (function () {
             description: 'On-demand sand castle construction expertise.',
             url: '#',
             votes: generateVoteCount(),
-            submitter_avatar_url: 'images/avatars/daniel.jpg',
+            submitter_avatar_url: ' images/avatars/daniel.jpg',
             product_image_url: 'images/products/image-aqua.png',
         },
         {
