@@ -46,9 +46,9 @@ const Message = () => {
 const newMessage = () => {
     return (
         <div className="message">
-        This is less than 140 characters.
-    </div>
-);
+            This is less than 140 characters.
+        </div>
+    );
 }
 
 const NameWithHandle = () => {
@@ -86,4 +86,12 @@ const Tweet = () => {
     );
 }
 
-ReactDOM.render(<ProductList/>, document.querySelector('#root'));
+const MainBody = () => {
+    return (
+        <div>
+            <Tweet/>
+            <ProductList/>
+        </div>
+    );
+}
+ReactDOM.render(<MainBody/>, document.querySelector('#root'));
