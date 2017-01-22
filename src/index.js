@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import ProductList from  './ProductList';
+import SignUp from './sign-up/SignUp'
 
 const Time = () => {
     return (
@@ -86,4 +87,5 @@ const MainBody = () => {
         </div>
     );
 }
-ReactDOM.render(<MainBody/>, document.querySelector('#root'));
+
+ReactDOM.render(<SignUp/>, document.querySelector('#root'));
