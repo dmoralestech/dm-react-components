@@ -5,38 +5,34 @@ import ImagePreview from './components/ImagePreviewArea/ImagePreview'
 import Checkout from './components/CheckoutArea/Checkout'
 
 
-var Overlay = React.createClass({
-    render: function() {
-        return (
-            <div className="Overlay" style={{'backgroundImage':'url(' + this.props.image + ')'}}>
-                Something
-            </div>
-        );
-    }
-});
-var Container = React.createClass({
-    render: function() {
-        return (
-            <div className="Container">
-                {this.props.children}
-            </div>
-        )
-    }
-});
-var Header = React.createClass({
+var Overlay = (props) => {
+    return (
+        <div className="Overlay" style={{'backgroundImage': 'url(' + props.image + ')'}}>
+            Something
+        </div>
+    );
+}
 
-    render: function() {
-        return (
-            <header>
-                <input onChange={this.props.onChange} type="range" max="100" min="1" step="1" />
-            </header>
-        );
-    }
-});
+
+var Container = (props) => {
+    return (
+        <div className="Container">
+            {props.children}
+        </div>
+    )
+}
+
+var Header = (props) => {
+    return (
+        <header>
+            <input onChange={props.onChange} type="range" max="100" min="1" step="1"/>
+        </header>
+    );
+}
 
 var CheckOutMain = React.createClass({
 
-    getInitialState: function() {
+    getInitialState: function () {
         return ({
             mounted: false,
             people: 1,
@@ -47,43 +43,47 @@ var CheckOutMain = React.createClass({
         });
     },
 
-    componentDidMount: function() {
-        this.setState({ mounted: true });
+    componentDidMount: function () {
+        this.setState({mounted: true});
     },
 
-    handleSubmit: function(e) {
+    handleSubmit: function (e) {
         console.log('handle ajax submission here');
         e.preventDefault();
     },
 
-    handleChange: function(e) {
-        this.setState({ duration: e.target.value });
+    handleChange: function (e) {
+        this.setState({duration: e.target.value});
     },
 
-    render: function() {
+    render: function () {
 
         var overlay, container;
-        if(this.state.mounted) {
+        if (this.state.mounted) {
             overlay = (
-                <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+                <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg"/>
             );
             container = (
                 <Container>
-                    <ImagePreview price={this.state.price} duration={this.state.duration} people={this.state.people} image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
-                    <Checkout duration={this.state.duration} discount={this.state.discount} tax={this.state.tax} price={this.state.price} onSubmit={this.handleSubmit} />
+                    <ImagePreview price={this.state.price} duration={this.state.duration} people={this.state.people}
+                                  image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg"/>
+                    <Checkout duration={this.state.duration} discount={this.state.discount} tax={this.state.tax}
+                              price={this.state.price} onSubmit={this.handleSubmit}/>
                 </Container>
             );
         }
 
-        return(
+        return (
             <div className="App">
-                <ReactCSSTransitionGroup transitionName="overlay" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                <ReactCSSTransitionGroup transitionName="overlay" transitionEnterTimeout={500}
+                                         transitionLeaveTimeout={300}>
                     {overlay}
                 </ReactCSSTransitionGroup>
-                <ReactCSSTransitionGroup transitionName="container" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                <ReactCSSTransitionGroup transitionName="container" transitionEnterTimeout={500}
+                                         transitionLeaveTimeout={300}>
                     {container}
                 </ReactCSSTransitionGroup>
-                <Header onChange={this.handleChange} />
+                <Header onChange={this.handleChange}/>
             </div>
         );
     }
