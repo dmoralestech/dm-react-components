@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './CheckOutMain.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ImagePreview from './components/ImagePreviewArea/ImagePreview'
 import Checkout from './components/CheckoutArea/Checkout'
@@ -34,7 +34,7 @@ var Header = React.createClass({
     }
 });
 
-var App = React.createClass({
+var CheckOutMain = React.createClass({
 
     getInitialState: function() {
         return ({
