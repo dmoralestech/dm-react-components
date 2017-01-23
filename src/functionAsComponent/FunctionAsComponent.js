@@ -20,3 +20,4 @@ class FunctionAsComponent extends Component {
 }
 
 export default FunctionAsComponent;
+
