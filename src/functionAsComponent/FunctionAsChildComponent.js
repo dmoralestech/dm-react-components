@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ScrollPos from './ScrollPos';
 import './App.css';
 
-class FunctionAsComponent extends Component {
+class FunctionAsChildComponent extends Component {
     render() {
         return (
             <div className="App">
@@ -19,5 +19,5 @@ class FunctionAsComponent extends Component {
     }
 }
 
-export default FunctionAsComponent;
+export default FunctionAsChildComponent;
 
