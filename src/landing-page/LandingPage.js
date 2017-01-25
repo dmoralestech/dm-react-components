@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo.js';
-import './LandinPage.css';
+import './LandingPage.css';
 
 /////////////////
 /// COMPONENTS //
