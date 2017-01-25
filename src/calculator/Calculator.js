@@ -1,7 +1,7 @@
 import React from 'react'
 import update from 'react-addons-update'
 import math from 'mathjs'
-import './App.css';
+import './Calculator';
 
 var App = React.createClass({
     getInitialState: function() {
