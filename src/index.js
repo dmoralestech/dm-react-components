@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router'
 
 import './index.css';
 // import ProductList from  './ProductList';
@@ -10,21 +9,26 @@ import './index.css';
 import Tweet from './tweet/Tweet'
 // import App from './reactChildren/App'
 import LandingPage from './landing-page/LandingPage'
+import Calculator from './calculator/Calculator'
 
-const Home = () => (<div><h1>Welcome home</h1></div>)
-const About = () => (<div><h1>About</h1></div>)
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
+import {Index} from './containers/Index';
 
-export class App extends React.Component {
-    render() {
-        return (
-            <Router history={hashHistory}>
-                <Route path="/" component={Home} />
-                <Route path="/landing-page" component={LandingPage} />
-                <Route path="/tweet" component={Tweet} />
-                <Route path="/about" component={About} />
-            </Router>
-        )
-    }
-}
+// const Home = () => (<div><h1>Welcome home</h1></div>)
+// const About = () => (<div><h1>About</h1></div>)
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+// export class App extends React.Component {
+//     render() {
+//         return (
+//             <Router history={hashHistory}>
+//                 <Route path="/" component={Index}>
+//                     <IndexRoute component={Home}/>
+//                     <Route path="home" component={Home}/>
+//                     <Route path="about" component={About}/>
+//                 </Route>
+//             </Router>
+//         )
+//     }
+// }
+
+ReactDOM.render(<Calculator/>, document.querySelector('#root'));
