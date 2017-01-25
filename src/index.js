@@ -7,6 +7,7 @@ import './index.css';
 // import FunctionAsChildComponent from './functionAsComponent/FunctionAsChildComponent'
 // import Tweet from './tweet/Tweet'
 import App from './reactChildren/App'
+import LandingPage from './landing-page/LandingPage'
 
 // const MainBody = () => {
 //     return (
@@ -17,4 +18,4 @@ import App from './reactChildren/App'
 //     );
 // }
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(<LandingPage/>, document.querySelector('#root'));

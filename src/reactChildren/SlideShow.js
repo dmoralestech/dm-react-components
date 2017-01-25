@@ -28,7 +28,7 @@ class SlideShow extends Component {
     render() {
         const { children } = this.props;
         const bullets = Array(this.state.total).fill("○");
-        bullets[this.state.current] = "●";
+        bullets[this.state.current] =  'x'; //"●";
         return (
             <div className="slideshow">
                 <div>{bullets}</div>

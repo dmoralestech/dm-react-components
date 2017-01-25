@@ -10,6 +10,8 @@ class App extends Component {
                     <img src="http://placekitten.com/300/201" alt="Cat Pic" />
                     <img src="http://placekitten.com/300/202" alt="Cat Pic" />
                     <img src="http://placekitten.com/300/203" alt="Cat Pic" />
+                    <img src="http://placekitten.com/300/204" alt="Cat Pic" />
+                    <img src="http://placekitten.com/300/205" alt="Cat Pic" />
                 </SlideShow>
             </div>
         );
