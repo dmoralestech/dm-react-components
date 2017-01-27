@@ -9,8 +9,8 @@ import './index.css';
 import Tweet from './tweet/Tweet'
 // import App from './reactChildren/App'
 import LandingPage from './landing-page/LandingPage'
-import Calculator from './calculator/Calculator'
-
+// import Calculator from './calculator/Calculator'
+import ImageProfilePic from './ImageProfilePic/ImageProfilePic'
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import {Index} from './containers/Index';
 
@@ -31,4 +31,4 @@ import {Index} from './containers/Index';
 //     }
 // }
 
-ReactDOM.render(<Calculator/>, document.querySelector('#root'));
+ReactDOM.render(<ImageProfilePic/>, document.querySelector('#root'));

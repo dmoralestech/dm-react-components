@@ -83,8 +83,7 @@ var Buttons = (props) => {
 
 var Button = (props) => {
     return (
-        <div onClick={props.onClick} className="Button" data-size={props.size}
-             data-value={props.value}>
+        <div onClick={props.onClick} className="Button" data-size={props.size} data-value={props.value}>
             {props.label}
         </div>
     )
