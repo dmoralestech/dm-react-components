@@ -6,10 +6,10 @@ import {Index} from './containers/Index';
 const Home = () => (<div><h1>Welcome home</h1></div>)
 const About = () => (<div><h1>About</h1></div>)
 
-export class AppRoute extends React.Component {
+export class routes extends React.Component {
     render() {
         return (
-            <Route path="/" component={Index}>
+            <Route path="/" component={Home}>
                 <IndexRoute component={Home}/>
                 <Route path="home" component={Home}/>
                 <Route path="about" component={About}/>
@@ -18,4 +18,4 @@ export class AppRoute extends React.Component {
     }
 }
 
-export default AppRoute
+export default routes
