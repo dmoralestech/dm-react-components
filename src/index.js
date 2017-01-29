@@ -10,12 +10,13 @@ import ReactDOM from 'react-dom';
 // import App from './reactChildren/App'
 // import LandingPage from './landing-page/LandingPage'
 // import Calculator from './calculator/Calculator'
-import ImageProfilePic from './ImageProfilePic/ImageProfilePic'
+// import ImageProfilePic from './ImageProfilePic/ImageProfilePic'
+import Settings from './settings/SettingComponent'
 
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import routes from './routes'
 
-ReactDOM.render(<ImageProfilePic/>,
+ReactDOM.render(<Settings/>,
     document.querySelector('#root'));
 
 // ReactDOM.render(<Router history={browserHistory} routes={routes}/>,

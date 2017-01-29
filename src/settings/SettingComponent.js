@@ -135,11 +135,11 @@ var data = {
 };
 
 // App Container
-var Settings = React.createClass({
-    getDefaultProps: function() {
-        return(data);
+var SettingComponent = React.createClass({
+    getDefaultProps: function () {
+        return (data);
     },
-    handleChange: function(e) {
+    handleChange: function (e) {
         var value = e.target.value;
         var name = e.target.id;
         switch (name) {
@@ -161,8 +161,8 @@ var Settings = React.createClass({
         }
         this.forceUpdate();
     },
-    handleClick: function(e) {
-        var index = e.target.id.replace('filter-','');
+    handleClick: function (e) {
+        var index = e.target.id.replace('filter-', '');
         // console.log(this.props.filters[index].settings);
         this.props.settings[0].value = this.props.filters[index].settings[0].value;
         this.props.settings[1].value = this.props.filters[index].settings[1].value;
@@ -172,11 +172,11 @@ var Settings = React.createClass({
         this.forceUpdate();
 
     },
-    render: function() {
-        return(
+    render: function () {
+        return (
             <div className="App">
-                <ImageBG image={this.props.image} />
-                <Settings onClick={this.handleClick} onChange={this.handleChange} data={this.props} />
+                <ImageBG image={this.props.image}/>
+                <Settings onClick={this.handleClick} onChange={this.handleChange} data={this.props}/>
             </div>
         )
     }
@@ -184,23 +184,24 @@ var Settings = React.createClass({
 
 // Image Background
 var ImageBG = React.createClass({
-    render: function() {
+    render: function () {
         return (
-            <div className="ImageBG" style={{backgroundImage: 'url('+ this.props.image + ')'}}></div>
+            <div className="ImageBG" style={{backgroundImage: 'url(' + this.props.image + ')'}}></div>
         )
     }
 });
 
 // Settings Container
 var Settings = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="Settings">
                 <div className="MainWrapper">
-                    <Sidebar onChange={this.props.onChange} settings={this.props.data.settings} />
-                    <ImageContainer settings={this.props.data.settings} image={this.props.data.image} />
+                    <Sidebar onChange={this.props.onChange} settings={this.props.data.settings}/>
+                    <ImageContainer settings={this.props.data.settings} image={this.props.data.image}/>
                 </div>
-                <FilterList onClick={this.props.onClick} filters={this.props.data.filters} image={this.props.data.image} />
+                <FilterList onClick={this.props.onClick} filters={this.props.data.filters}
+                            image={this.props.data.image}/>
             </div>
         )
     }
@@ -208,10 +209,10 @@ var Settings = React.createClass({
 
 // Sidebar
 var Sidebar = React.createClass({
-    render: function() {
+    render: function () {
         var onChange = this.props.onChange;
-        var settings = this.props.settings.map(function(setting, i) {
-            return <Setting onChange={onChange} name={setting.name} value={setting.value} />;
+        var settings = this.props.settings.map(function (setting, i) {
+            return <Setting onChange={onChange} name={setting.name} value={setting.value}/>;
         });
 
         return (
@@ -224,38 +225,50 @@ var Sidebar = React.createClass({
 });
 
 var Setting = React.createClass({
-    render: function() {
+    render: function () {
 
-        if(this.props.name == 'hue') {
+        if (this.props.name == 'hue') {
 
-            var value = this.props.value.replace('deg','');
+            var value = this.props.value.replace('deg', '');
 
             return (
                 <div className="Setting">
-                    <label><div>{this.props.name}</div><div>{value}</div></label>
-                    <input refs={this.props.name} min="-360" max="360" step="1" onChange={this.props.onChange} id={this.props.name} type="range" defaultValue={this.props.value} />
+                    <label>
+                        <div>{this.props.name}</div>
+                        <div>{value}</div>
+                    </label>
+                    <input refs={this.props.name} min="-360" max="360" step="1" onChange={this.props.onChange}
+                           id={this.props.name} type="range" defaultValue={this.props.value}/>
                 </div>
             );
 
-        } else if(this.props.name == 'contrast' || this.props.name == 'brightness') {
+        } else if (this.props.name == 'contrast' || this.props.name == 'brightness') {
 
-            var value = this.props.value.replace('%','');
+            var value = this.props.value.replace('%', '');
 
             return (
                 <div className="Setting">
-                    <label><div>{this.props.name}</div><div>{value}</div></label>
-                    <input refs={this.props.name} min="0" max="200" step="1" onChange={this.props.onChange} id={this.props.name} type="range" defaultValue={this.props.value} />
+                    <label>
+                        <div>{this.props.name}</div>
+                        <div>{value}</div>
+                    </label>
+                    <input refs={this.props.name} min="0" max="200" step="1" onChange={this.props.onChange}
+                           id={this.props.name} type="range" defaultValue={this.props.value}/>
                 </div>
             );
 
         } else {
 
-            var value = this.props.value.replace('%','');
+            var value = this.props.value.replace('%', '');
 
             return (
                 <div className="Setting">
-                    <label><div>{this.props.name}</div><div>{value}</div></label>
-                    <input refs={this.props.name} min="0" max="100" step="1" onChange={this.props.onChange} id={this.props.name} type="range" defaultValue={this.props.value} />
+                    <label>
+                        <div>{this.props.name}</div>
+                        <div>{value}</div>
+                    </label>
+                    <input refs={this.props.name} min="0" max="100" step="1" onChange={this.props.onChange}
+                           id={this.props.name} type="range" defaultValue={this.props.value}/>
                 </div>
             );
 
@@ -266,10 +279,10 @@ var Setting = React.createClass({
 
 // Image Container
 var ImageContainer = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="ImageContainer">
-                <Image settings={this.props.settings} image={this.props.image} />
+                <Image settings={this.props.settings} image={this.props.image}/>
             </div>
         );
     }
@@ -277,13 +290,13 @@ var ImageContainer = React.createClass({
 
 // Image
 var Image = React.createClass({
-    render: function() {
+    render: function () {
 
-        if(!this.props.settings == []) {
+        if (!this.props.settings == []) {
             var filterString = "";
-            var filters = this.props.settings.map(function(filter, i) {
+            var filters = this.props.settings.map(function (filter, i) {
 
-                if(filter.name == 'hue') {
+                if (filter.name == 'hue') {
                     filterString = filterString + 'hue-rotate(' + filter.value + ') ';
                 } else {
                     filterString = filterString + filter.name + '(' + filter.value + ') ';
@@ -299,7 +312,7 @@ var Image = React.createClass({
             webkitFilter: filterString
         };
 
-        if(!this.props.id) {
+        if (!this.props.id) {
             var id = 'filter-image';
         } else {
             var id = this.props.id;
@@ -314,12 +327,12 @@ var Image = React.createClass({
 
 // FilterList
 var FilterList = React.createClass({
-    render: function() {
+    render: function () {
         var image = this.props.image;
         var onClick = this.props.onClick;
 
-        var filters = this.props.filters.map(function(filter, i) {
-            return <Filter onClick={onClick} id={filter.id} image={image} settings={filter.settings} />
+        var filters = this.props.filters.map(function (filter, i) {
+            return <Filter onClick={onClick} id={filter.id} image={image} settings={filter.settings}/>
         });
 
         return (
@@ -332,13 +345,13 @@ var FilterList = React.createClass({
 
 // Filter
 var Filter = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="Filter" onClick={this.props.onClick}>
-                <Image id={'filter-' + this.props.id} settings={this.props.settings} image={this.props.image} />
+                <Image id={'filter-' + this.props.id} settings={this.props.settings} image={this.props.image}/>
             </div>
         );
     }
 });
 
-export default Settings
+export default SettingComponent
