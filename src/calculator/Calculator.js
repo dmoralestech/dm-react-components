@@ -3,21 +3,23 @@ import update from 'react-addons-update'
 import math from 'mathjs'
 import './Calculator.css';
 
-var App = React.createClass({
-    getInitialState: function () {
+class App extends React.Component {
+    getInitialState () {
         return ({
             operations: []
         });
-    },
-    calculateOperations: function () {
+    }
+
+    calculateOperations() {
         var result = this.state.operations.join('');
         if (result) {
             result = String(math.eval(result));
             this.setState({operations: [result]});
         }
 
-    },
-    handleClick: function (e) {
+    }
+
+    handleClick(e) {
         var value = e.target.getAttribute('data-value');
         switch (value) {
             case 'clear':
@@ -31,8 +33,9 @@ var App = React.createClass({
                 this.setState({operations: newOperations});
                 break;
         }
-    },
-    render: function () {
+    }
+
+    render() {
         return (
             <div className="App">
                 <Display data={this.state.operations}/>
@@ -62,7 +65,7 @@ var App = React.createClass({
             </div>
         );
     }
-});
+}
 
 var Display = (props) => {
     var string = props.data.join('');

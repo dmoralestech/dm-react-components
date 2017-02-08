@@ -16,11 +16,12 @@ function logChange(val) {
 }
 
 
-var Error404 = React.createClass({
-    getDefaultProps: function() {
+class Error404  extends React.Component {
+    getDefaultProps() {
         return { image: 'http://i.giphy.com/l117HrgEinjIA.gif' }
-    },
-    renderTest: function() {
+    }
+
+    renderTest() {
         return (
             <div>
                 <Select
@@ -31,8 +32,9 @@ var Error404 = React.createClass({
                 />
             </div>
         )
-    },
-    render: function() {
+    }
+
+    render() {
         return (
         <div className="FourOhFour">
             <div className="bg" style={{ backgroundImage: 'url(' + this.props.image + ')'}}></div>
@@ -40,6 +42,6 @@ var Error404 = React.createClass({
         </div>
         )
     }
-});
+}
 
 export default Error404
