@@ -1,4 +1,8 @@
-var App = React.createClass({
+import React from 'react'
+
+import './Error404.css'
+
+var Error404 = React.createClass({
     getDefaultProps: function() {
         return { image: 'http://i.giphy.com/l117HrgEinjIA.gif' }
     },
@@ -12,7 +16,4 @@ var App = React.createClass({
     }
 });
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
+export default Error404
